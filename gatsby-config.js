@@ -19,5 +19,17 @@ module.exports = {
         analyzerMode: "static",
       },
     },
+    {
+      resolve: `gatsby-plugin-eslint`,
+      options: {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ["develop"],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
+      },
+    },
   ],
 }

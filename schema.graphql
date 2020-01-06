@@ -1235,6 +1235,9 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___disable
   pluginCreator___pluginOptions___generateStatFile
   pluginCreator___pluginOptions___analyzerMode
+  pluginCreator___pluginOptions___stages
+  pluginCreator___pluginOptions___options___emitWarning
+  pluginCreator___pluginOptions___options___failOnError
   pluginCreator___pluginOptions___path
   pluginCreator___pluginOptions___pathCheck
   pluginCreator___nodeAPIs
@@ -1413,6 +1416,9 @@ enum SitePluginFieldsEnum {
   pluginOptions___disable
   pluginOptions___generateStatFile
   pluginOptions___analyzerMode
+  pluginOptions___stages
+  pluginOptions___options___emitWarning
+  pluginOptions___options___failOnError
   pluginOptions___path
   pluginOptions___pathCheck
   nodeAPIs
@@ -1533,6 +1539,8 @@ type SitePluginPluginOptions {
   disable: Boolean
   generateStatFile: Boolean
   analyzerMode: String
+  stages: [String]
+  options: SitePluginPluginOptionsOptions
   path: String
   pathCheck: Boolean
 }
@@ -1542,8 +1550,20 @@ input SitePluginPluginOptionsFilterInput {
   disable: BooleanQueryOperatorInput
   generateStatFile: BooleanQueryOperatorInput
   analyzerMode: StringQueryOperatorInput
+  stages: StringQueryOperatorInput
+  options: SitePluginPluginOptionsOptionsFilterInput
   path: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
+}
+
+type SitePluginPluginOptionsOptions {
+  emitWarning: Boolean
+  failOnError: Boolean
+}
+
+input SitePluginPluginOptionsOptionsFilterInput {
+  emitWarning: BooleanQueryOperatorInput
+  failOnError: BooleanQueryOperatorInput
 }
 
 input SitePluginSortInput {

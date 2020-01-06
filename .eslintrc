@@ -1,5 +1,10 @@
 {
-  "extends": "react-app",
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    "react/jsx-filename-extension": 0,
+    //    TODO: figure out how to tell eslint about my webpack alias
+    "import/no-unresolved": 1
+  },
   "globals": {
     "__PATH_PREFIX__": true
   }
