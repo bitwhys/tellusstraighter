@@ -27,6 +27,7 @@
   "devDependencies": {
     "babel-preset-gatsby": "^0.2.26",
     "cz-conventional-changelog": "3.0.2",
+    "eslint-config-react-app": "^5.1.0",
     "esm": "^3.2.25",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "postcss-preset-env": "^6.7.0",
