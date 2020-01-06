@@ -1,34 +1,23 @@
 module.exports = {
   siteMetadata: {
     title: `Tell Us Straighter`,
-    description: `Providing Colored Commentary, in Black & White.`,
+    description:
+      "Providing colored commentary, in black & white. " +
+      "A living time capsule of one man's journey to becoming a modern full stack engineer.",
     author: `@bitwhys`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-webpack-bundle-analyzer`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        production: true,
+        disable: !process.env.ANALYZE_BUNDLE_SIZE,
+        generateStatFile: true,
+        analyzerMode: "static",
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#ff0844`,
-        theme_color: `#ff0844`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
