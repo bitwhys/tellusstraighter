@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 1,
+    "import/no-unresolved": 1
+  },
+  "globals": {
+    "__PATH_PREFIX__": true
+  }
+}
