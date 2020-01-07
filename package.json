@@ -16,7 +16,6 @@
     "@emotion/styled": "^10.0.27",
     "gatsby": "^2.18.18",
     "gatsby-plugin-emotion": "^4.1.18",
-    "gatsby-plugin-postcss": "^2.1.18",
     "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-typography": "^2.3.20",
     "postcss-import": "^12.0.1",
@@ -25,7 +24,6 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
-    "tailwind.macro": "^1.0.0-alpha.10",
     "typography": "^0.16.19"
   },
   "devDependencies": {
@@ -44,7 +42,6 @@
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
-    "tailwindcss": "^1.1.4",
     "write": "^2.0.0"
   },
   "repository": {
