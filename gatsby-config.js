@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `Tell Us Straighter`,
@@ -10,6 +12,17 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: path.resolve(
+          __dirname,
+          "src",
+          "styles",
+          "typography.js"
+        ),
+      },
+    },
     {
       resolve: `gatsby-plugin-webpack-bundle-analyzer`,
       options: {

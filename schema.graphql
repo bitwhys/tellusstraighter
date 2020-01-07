@@ -895,7 +895,7 @@ type Query {
   allDirectory(filter: DirectoryFilterInput, sort: DirectorySortInput, skip: Int, limit: Int): DirectoryConnection!
   site(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, siteMetadata: SiteSiteMetadataFilterInput, port: IntQueryOperatorInput, host: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, pathPrefix: StringQueryOperatorInput, buildTime: DateQueryOperatorInput): Site
   allSite(filter: SiteFilterInput, sort: SiteSortInput, skip: Int, limit: Int): SiteConnection!
-  sitePlugin(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, resolve: StringQueryOperatorInput, name: StringQueryOperatorInput, version: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, nodeAPIs: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, pluginFilepath: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput): SitePlugin
+  sitePlugin(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, resolve: StringQueryOperatorInput, name: StringQueryOperatorInput, version: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, nodeAPIs: StringQueryOperatorInput, browserAPIs: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, pluginFilepath: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput): SitePlugin
   allSitePlugin(filter: SitePluginFilterInput, sort: SitePluginSortInput, skip: Int, limit: Int): SitePluginConnection!
   sitePage(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, path: StringQueryOperatorInput, internalComponentName: StringQueryOperatorInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput, componentPath: StringQueryOperatorInput): SitePage
   allSitePage(filter: SitePageFilterInput, sort: SitePageSortInput, skip: Int, limit: Int): SitePageConnection!
@@ -1231,6 +1231,7 @@ enum SitePageFieldsEnum {
   pluginCreator___resolve
   pluginCreator___name
   pluginCreator___version
+  pluginCreator___pluginOptions___pathToConfigModule
   pluginCreator___pluginOptions___production
   pluginCreator___pluginOptions___disable
   pluginCreator___pluginOptions___generateStatFile
@@ -1241,6 +1242,7 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___path
   pluginCreator___pluginOptions___pathCheck
   pluginCreator___nodeAPIs
+  pluginCreator___browserAPIs
   pluginCreator___ssrAPIs
   pluginCreator___pluginFilepath
   pluginCreator___packageJson___name
@@ -1302,6 +1304,7 @@ type SitePlugin implements Node {
   version: String
   pluginOptions: SitePluginPluginOptions
   nodeAPIs: [String]
+  browserAPIs: [String]
   ssrAPIs: [String]
   pluginFilepath: String
   packageJson: SitePluginPackageJson
@@ -1412,6 +1415,7 @@ enum SitePluginFieldsEnum {
   resolve
   name
   version
+  pluginOptions___pathToConfigModule
   pluginOptions___production
   pluginOptions___disable
   pluginOptions___generateStatFile
@@ -1422,6 +1426,7 @@ enum SitePluginFieldsEnum {
   pluginOptions___path
   pluginOptions___pathCheck
   nodeAPIs
+  browserAPIs
   ssrAPIs
   pluginFilepath
   packageJson___name
@@ -1452,6 +1457,7 @@ input SitePluginFilterInput {
   version: StringQueryOperatorInput
   pluginOptions: SitePluginPluginOptionsFilterInput
   nodeAPIs: StringQueryOperatorInput
+  browserAPIs: StringQueryOperatorInput
   ssrAPIs: StringQueryOperatorInput
   pluginFilepath: StringQueryOperatorInput
   packageJson: SitePluginPackageJsonFilterInput
@@ -1535,6 +1541,7 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 }
 
 type SitePluginPluginOptions {
+  pathToConfigModule: String
   production: Boolean
   disable: Boolean
   generateStatFile: Boolean
@@ -1546,6 +1553,7 @@ type SitePluginPluginOptions {
 }
 
 input SitePluginPluginOptionsFilterInput {
+  pathToConfigModule: StringQueryOperatorInput
   production: BooleanQueryOperatorInput
   disable: BooleanQueryOperatorInput
   generateStatFile: BooleanQueryOperatorInput

@@ -1078,6 +1078,16 @@
                 "defaultValue": null
               },
               {
+                "name": "browserAPIs",
+                "description": "",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "ssrAPIs",
                 "description": "",
                 "type": {
@@ -7456,6 +7466,16 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "pathToConfigModule",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "production",
             "description": "",
             "type": {
@@ -7948,6 +7968,18 @@
             "deprecationReason": null
           },
           {
+            "name": "browserAPIs",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "ssrAPIs",
             "description": null,
             "args": [],
@@ -7990,6 +8022,14 @@
         "name": "SitePluginPluginOptions",
         "description": null,
         "fields": [
+          {
+            "name": "pathToConfigModule",
+            "description": null,
+            "args": [],
+            "type": { "kind": "SCALAR", "name": "String", "ofType": null },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "production",
             "description": null,
@@ -8383,6 +8423,16 @@
           },
           {
             "name": "nodeAPIs",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "browserAPIs",
             "description": "",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -9008,6 +9058,12 @@
             "deprecationReason": null
           },
           {
+            "name": "pluginOptions___pathToConfigModule",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "pluginOptions___production",
             "description": null,
             "isDeprecated": false,
@@ -9063,6 +9119,12 @@
           },
           {
             "name": "nodeAPIs",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "browserAPIs",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -10599,6 +10661,12 @@
             "deprecationReason": null
           },
           {
+            "name": "pluginCreator___pluginOptions___pathToConfigModule",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "pluginCreator___pluginOptions___production",
             "description": null,
             "isDeprecated": false,
@@ -10654,6 +10722,12 @@
           },
           {
             "name": "pluginCreator___nodeAPIs",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginCreator___browserAPIs",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
