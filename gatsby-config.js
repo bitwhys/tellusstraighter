@@ -20,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: "Tell Us Starter",
+        short_name: "Tell Us Straighter",
         start_url: "/",
         background_color: "#ff0844",
         theme_color: "#ff0844",
         display: "minimal-ui",
-        icon: `${__dirname}/src/images/gatsby-icon.png`,
+        icon: `${__dirname}/content/images/avatar.svg`,
       },
     },
     {
