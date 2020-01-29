@@ -1,5 +1,4 @@
 import Typography from "typography"
-import "./adobe-typekit-import.css"
 
 const overrideStyles = () => ({
   // FIXME: taken from an example

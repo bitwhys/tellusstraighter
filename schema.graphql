@@ -2203,6 +2203,9 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___theme_color
   pluginCreator___pluginOptions___display
   pluginCreator___pluginOptions___icon
+  pluginCreator___pluginOptions___stages
+  pluginCreator___pluginOptions___options___emitWarning
+  pluginCreator___pluginOptions___options___failOnError
   pluginCreator___pluginOptions___pathToConfigModule
   pluginCreator___pluginOptions___production
   pluginCreator___pluginOptions___disable
@@ -2392,6 +2395,9 @@ enum SitePluginFieldsEnum {
   pluginOptions___theme_color
   pluginOptions___display
   pluginOptions___icon
+  pluginOptions___stages
+  pluginOptions___options___emitWarning
+  pluginOptions___options___failOnError
   pluginOptions___pathToConfigModule
   pluginOptions___production
   pluginOptions___disable
@@ -2523,6 +2529,8 @@ type SitePluginPluginOptions {
   theme_color: String
   display: String
   icon: String
+  stages: [String]
+  options: SitePluginPluginOptionsOptions
   pathToConfigModule: String
   production: Boolean
   disable: Boolean
@@ -2541,12 +2549,24 @@ input SitePluginPluginOptionsFilterInput {
   theme_color: StringQueryOperatorInput
   display: StringQueryOperatorInput
   icon: StringQueryOperatorInput
+  stages: StringQueryOperatorInput
+  options: SitePluginPluginOptionsOptionsFilterInput
   pathToConfigModule: StringQueryOperatorInput
   production: BooleanQueryOperatorInput
   disable: BooleanQueryOperatorInput
   generateStatFile: BooleanQueryOperatorInput
   analyzerMode: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
+}
+
+type SitePluginPluginOptionsOptions {
+  emitWarning: Boolean
+  failOnError: Boolean
+}
+
+input SitePluginPluginOptionsOptionsFilterInput {
+  emitWarning: BooleanQueryOperatorInput
+  failOnError: BooleanQueryOperatorInput
 }
 
 input SitePluginSortInput {

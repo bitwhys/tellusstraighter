@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import "../gatsby-plugin-theme-ui/adobe-typekit-import.css"
 
 import Header from "./header"
 
