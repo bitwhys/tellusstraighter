@@ -12,14 +12,16 @@ import { introspectionQuery, graphql, printSchema } from "gatsby/graphql"
  */
 exports.onPostBootstrap = async ({ store }) => {
   try {
-    const { schema } = store.getState()
-    const jsonSchema = await graphql(schema, introspectionQuery)
-    const sdlSchema = printSchema(schema)
+    if (process.env.NODE_ENV !== "production") {
+      const { schema } = store.getState()
+      const jsonSchema = await graphql(schema, introspectionQuery)
+      const sdlSchema = printSchema(schema)
 
-    write.sync("schema.json", JSON.stringify(jsonSchema.data), {})
-    write.sync("schema.graphql", sdlSchema, {})
+      write.sync("schema.json", JSON.stringify(jsonSchema.data), {})
+      write.sync("schema.graphql", sdlSchema, {})
 
-    console.log("\n\n[gatsby-plugin-extract-schema] Wrote schema\n") // eslint-disable-line
+      console.log("\n\n[gatsby-plugin-extract-schema] Wrote schema\n") // eslint-disable-line
+    }
   } catch (error) {
     console.error(
       "\n\n[gatsby-plugin-extract-schema] Failed to write schema: ",
