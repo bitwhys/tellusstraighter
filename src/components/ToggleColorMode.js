@@ -22,10 +22,10 @@ const Indicator = styled.span`
     position: absolute;
     content: "";
     top: calc(34%);
-    height: 8px;
-    width: 6px;
-    background: #f0f9e3;
-    box-shadow: 0 0 4px 4px #fc5881;
+    height: 7px;
+    width: 5px;
+    background: #faf0f4;
+    box-shadow: 0 0 9px 3px #fc5881;
     border-radius: 10px;
     transition: 0.1s;
   }

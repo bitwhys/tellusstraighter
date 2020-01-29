@@ -13,6 +13,7 @@ const IndexPage = () => (
     <Section heading="pretty things">
       <Gallery />
     </Section>
+    <Section heading="my changelog" />
   </Layout>
 )
 
