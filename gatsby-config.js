@@ -42,6 +42,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `${__dirname}/src/gatsby-plugin-theme-ui/typography.js`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-webpack-bundle-analyzer`,
       options: {
         production: true,

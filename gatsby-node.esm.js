@@ -1,3 +1,4 @@
+import path from "path"
 import write from "write"
 import { introspectionQuery, graphql, printSchema } from "gatsby/graphql"
 
@@ -23,4 +24,14 @@ exports.onPostBootstrap = async ({ store }) => {
       "\n"
     )
   }
+}
+
+exports.onCreateWebpackConfig = async ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "src", "components"),
+      },
+    },
+  })
 }

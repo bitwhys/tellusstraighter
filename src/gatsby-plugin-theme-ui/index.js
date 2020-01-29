@@ -1,3 +1,4 @@
+
 const colors = {
   text: "#333",
   background: "#fff",
@@ -12,23 +13,15 @@ const colors = {
   },
 }
 
-export default {
+const theme =  {
   colors,
   fonts: {
-    body: "Muli, Roboto, sans-serif",
-    heading: "Alverta, Merriweather, serif",
-    monospace: "Muli, monospace",
+    body: "alverata",
+    heading: "poppins",
+    ui: "poppins",
+    brand:"alverata"
   },
-  fontWeight: {
-    body: 400,
-    heading: 500,
-    bold: 700,
-    black: 900,
-  },
-  lineHeight: {
-    body: 1.5,
-    heading: 1.125,
-  },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 }
+
+export default theme
