@@ -1,7 +1,8 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React from "react"
 import BackgroundImage from "gatsby-background-image"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
 import { graphql, useStaticQuery } from "gatsby"
 
 import Container from "@components/Container"
@@ -58,22 +59,9 @@ const Hero = () => {
       <TextBox>
         <h1>
           Providing colored commentary, in{" "}
-          <span
-            css={css`
-              color: #ff0844;
-            `}
-          >
-            black&nbsp;&&nbsp;white.
-          </span>
+          <span sx={{ color: "primary" }}>black&nbsp;&&nbsp;white.</span>
         </h1>
-        <p
-          css={css`
-            max-width: 660px;
-            text-align: center;
-          `}
-        >
-          {blog.description}
-        </p>
+        <p>{blog.description}</p>
       </TextBox>
     </ImageBackground>
   )
