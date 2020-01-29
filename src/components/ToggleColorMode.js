@@ -128,13 +128,13 @@ const Label = styled.label`
 `
 
 // TODO: build a simpler version for mobile
-const ToggleColorMode = () => {
+const ToggleColorMode = ({ className }) => {
   const [colorMode, setColorMode] = useColorMode()
   const handleToggle = () => {
     setColorMode(colorMode === "default" ? "dark" : "default")
   }
   return (
-    <Label className="checkboxControl">
+    <Label className={className}>
       <CheckBox type="checkbox" onChange={handleToggle} />
       <Symbols>ΟI</Symbols>
       <b />

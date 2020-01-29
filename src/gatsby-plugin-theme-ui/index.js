@@ -1,4 +1,3 @@
-
 const colors = {
   text: "#333",
   background: "#fff",
@@ -13,15 +12,18 @@ const colors = {
   },
 }
 
-const theme =  {
+const theme = {
   colors,
   fonts: {
     body: "alverata",
     heading: "poppins",
     ui: "poppins",
-    brand:"alverata"
+    brand: "alverata",
   },
+  breakpoints: [568, 768, 992, 1200],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  sizes: {},
 }
 
 export default theme
