@@ -1,7 +1,7 @@
 import Typography from "typography"
 import "./adobe-typekit-import.css"
 
-const overrideStyles = ({ rhythm }) => ({
+const overrideStyles = () => ({
   // FIXME: taken from an example
   "@media only screen and (max-width: 548px)": {
     html: {
@@ -25,4 +25,3 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 export default typography
-export const { rhythm, scale } = typography

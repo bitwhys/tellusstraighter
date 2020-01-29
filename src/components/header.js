@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import { jsx, useColorMode } from "theme-ui"
+import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import React from "react"
 import PropTypes from "prop-types"
 import ToggleColorMode from "@components/ToggleColorMode"
 
 const Header = ({ siteTitle }) => {
-  const [colorMode, setColorMode] = useColorMode()
   return (
     <header
       sx={{

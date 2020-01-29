@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from "theme-ui"
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 
 /**
@@ -19,17 +18,16 @@ const Indicator = styled.span`
   transition: 0.2s;
 
   &:before {
-    box-shadow: 0 0 4px 4px #FC5881;
+    display: inline-block;
+    position: absolute;
+    content: "";
+    top: calc(34%);
+    height: 8px;
     width: 6px;
     background: #f0f9e3;
-    transition: 0.1s;
-    //------
-    position: absolute;
-    top: calc(34%);
-    content: "";
-    display: inline-block;
-    height: 8px;
+    box-shadow: 0 0 4px 4px #fc5881;
     border-radius: 10px;
+    transition: 0.1s;
   }
 `
 
@@ -38,14 +36,14 @@ const Indicator = styled.span`
  */
 const Symbols = styled.div`
   transform-origin: 100% 0;
-  box-shadow: 2px 0 1px 0 #a6f2fe inset;
+  box-shadow: 2px 0 1px 0 #d2d2d2 inset;
   background: linear-gradient(
     to right,
-    #cef5ff 0%,
-    #33afce 1%,
-    #69dcf1 47%,
-    #a0f2fe 50%,
-    #8fd9e4 100%
+    #b9b9b9 0%,
+    #cfcfcf 1%,
+    #adadad 47%,
+    #808080 50%,
+    #e7e7e7 100%
   );
 
   font-family: Poppins, sans-serif;
@@ -80,14 +78,14 @@ const CheckBox = styled.input`
   // FIXME: this targets the Symbols
   &:checked ~ div {
     transform-origin: 0 0;
-    box-shadow: -2px 0 1px 0 #a6f2fe inset;
+    box-shadow: -2px 0 1px 0 #d2d2d2 inset;
     background: linear-gradient(
       to right,
-      #8fd9e4 0%,
-      #a0f2fe 53%,
-      #69dcf1 56%,
-      #33afce 99%,
-      #cef5ff 100%
+      #e7e7e7 0%,
+      #808080 1%,
+      #adadad 47%,
+      #cfcfcf 50%,
+      #b9b9b9 100%
     );
   }
 `
@@ -100,12 +98,12 @@ const Label = styled.label`
   padding-top: 1px;
   position: relative;
   vertical-align: middle;
-  color: #297597;
+  color: #606060;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
-    inset 0 2px 1px -1px rgba(255, 255, 255, 0.7), inset 8px 0 5px -5px #02425c,
-    inset -8px 0 5px -5px #02425c;
+    inset 0 2px 1px -1px rgba(255, 255, 255, 0.7), inset 8px 0 5px -5px #2f2f2f,
+    inset -8px 0 5px -5px #2f2f2f;
   user-select: none;
-  background: #80dce9;
+  background: #b5b5b5;
 
   /* bottom shadow of 'upper' side of the button */
   & > b {
@@ -129,7 +127,8 @@ const Label = styled.label`
   }
 `
 
-const ToggleColorMode = props => {
+// TODO: build a simpler version for mobile
+const ToggleColorMode = () => {
   const [colorMode, setColorMode] = useColorMode()
   const handleToggle = () => {
     setColorMode(colorMode === "default" ? "dark" : "default")
@@ -143,7 +142,5 @@ const ToggleColorMode = props => {
     </Label>
   )
 }
-
-ToggleColorMode.propTypes = {}
 
 export default ToggleColorMode
