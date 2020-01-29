@@ -3,11 +3,13 @@ const colors = {
   background: "#fff",
   primary: "#ff0844",
   secondary: "#1a1e1d",
+  muted: "#EDF2F7",
   modes: {
     dark: {
       text: "#fff",
       background: "#1a1e1d",
       primary: "#ff0844",
+      muted: "#33374D",
     },
   },
 }

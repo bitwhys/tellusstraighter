@@ -5,8 +5,9 @@ import BackgroundImage from "gatsby-background-image"
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 
-import Container from "@components/Container"
+// --------- local ---------
 import { mq } from "@utils"
+import Container from "@components/elements/Container"
 
 const ImageBackground = styled(BackgroundImage)`
   background-position: top 20% center;

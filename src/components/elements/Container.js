@@ -15,7 +15,6 @@ const Wrapper = styled.div`
     max-width: 1170px;
   }
 `
-
 const Container = ({ children, className }) => {
   return <Wrapper className={className}>{children}</Wrapper>
 }

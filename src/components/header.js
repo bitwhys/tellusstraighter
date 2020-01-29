@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
-import Container from "@components/Container"
+import Container from "@components/elements/Container"
 import ToggleColorMode from "@components/ToggleColorMode"
 import { StyledLink } from "@utils"
 
