@@ -44,6 +44,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-eslint`,
+      options: {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ["develop", "production"],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `${__dirname}/src/gatsby-plugin-theme-ui/typography.js`,
