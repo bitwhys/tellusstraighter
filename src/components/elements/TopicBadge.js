@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
@@ -14,7 +16,7 @@ const Base = styled(Link)`
   text-decoration: none;
   display: inline-block;
   user-select: none;
-  box-shadow: 0 0 0 1px rgb(237, 242, 247);
+  box-shadow: 0 0 0 1px ${p => p.theme.colors.muted};
   border-radius: 3px;
   color: #bbbbbb;
   background-color: transparent;
@@ -28,8 +30,8 @@ const TopicBadge = ({ topic, className }) => (
       py: 1,
       "&:hover": {
         bg: "primary",
-        boxShadow: "0 4px 8px rgb(0, 0, 0, 0.25)",
-        color: "text",
+        boxShadow: "0 4px 8px rgb(0, 0, 0, 0.35)",
+        color: "#fff",
       },
     }}
     className={className}

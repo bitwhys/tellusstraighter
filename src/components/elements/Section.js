@@ -5,7 +5,7 @@ import styled from "@emotion/styled"
 import Container from "@components/elements/Container"
 
 const SectionHeading = styled.h2`
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
   text-transform: capitalize;
   //  gray-200 from tailwind css
 `
@@ -19,7 +19,9 @@ const Section = ({ heading, children }) => {
             py: 3,
             fontSize: 3,
             borderColor: "muted",
-            margin: 0,
+            mt: 0,
+            mb: 4,
+            fontFamily: "body",
           }}
         >
           {heading}
