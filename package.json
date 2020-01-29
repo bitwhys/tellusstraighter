@@ -1,33 +1,49 @@
 {
   "name": "tellusstraighter",
-  "description": "A living time capsule of my journey to becoming a full stack engineer",
+  "private": true,
+  "description": "A living time capsule sharing my journey of becoming a full stack engineer",
   "version": "0.1.0",
-  "license": "MIT",
+  "author": "George Bockari <bitwhys@gmail.com>",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
-    "gatsby": "^2.18.18",
-    "gatsby-plugin-emotion": "^4.1.18",
-    "gatsby-plugin-react-helmet": "^3.1.18",
-    "gatsby-plugin-typography": "^2.3.20",
-    "postcss-import": "^12.0.1",
+    "@mdx-js/mdx": "^1.5.5",
+    "@mdx-js/react": "^1.5.5",
+    "@sindresorhus/slugify": "^0.10.0",
+    "@theme-ui/typography": "^0.3.0",
+    "deepmerge": "^4.2.2",
+    "gatsby": "^2.18.12",
+    "gatsby-background-image": "^0.9.13",
+    "gatsby-image": "^2.2.34",
+    "gatsby-plugin-manifest": "^2.2.31",
+    "gatsby-plugin-mdx": "^1.0.68",
+    "gatsby-plugin-offline": "^3.0.27",
+    "gatsby-plugin-react-helmet": "^3.1.16",
+    "gatsby-plugin-sharp": "^2.3.5",
+    "gatsby-plugin-theme-ui": "^0.3.0",
+    "gatsby-plugin-typography": "^2.3.21",
+    "gatsby-source-filesystem": "^2.1.40",
+    "gatsby-transformer-sharp": "^2.3.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
+    "strip-markdown": "^3.1.1",
+    "theme-ui": "^0.3.1",
     "typography": "^0.16.19"
   },
   "devDependencies": {
-    "babel-preset-gatsby": "^0.2.26",
+    "@types/theme-ui": "^0.2.7",
     "cz-conventional-changelog": "3.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -40,16 +56,19 @@
     "esm": "^3.2.25",
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
-    "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
     "write": "^2.0.0"
   },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitwhys/tellustraighter"
+    "url": "https://github.com/bitwhys/tellusstraighter"
   },
   "bugs": {
-    "url": "https://github.com/bitwhys/tellustraighter/issues"
+    "url": "https://github.com/bitwhys/tellusstraighter/issues"
   },
   "config": {
     "commitizen": {
