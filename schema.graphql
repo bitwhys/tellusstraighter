@@ -1855,7 +1855,7 @@ type Query {
   allImageSharp(filter: ImageSharpFilterInput, sort: ImageSharpSortInput, skip: Int, limit: Int): ImageSharpConnection!
   mdx(rawBody: StringQueryOperatorInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MdxFrontmatterFilterInput, body: StringQueryOperatorInput, excerpt: StringQueryOperatorInput, headings: MdxHeadingMdxFilterListInput, html: StringQueryOperatorInput, mdxAST: JSONQueryOperatorInput, tableOfContents: JSONQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MdxWordCountFilterInput, fields: MdxFieldsFilterInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): Mdx
   allMdx(filter: MdxFilterInput, sort: MdxSortInput, skip: Int, limit: Int): MdxConnection!
-  site(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, siteMetadata: SiteSiteMetadataFilterInput, polyfill: BooleanQueryOperatorInput, pathPrefix: StringQueryOperatorInput, buildTime: DateQueryOperatorInput): Site
+  site(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, siteMetadata: SiteSiteMetadataFilterInput, port: IntQueryOperatorInput, host: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, pathPrefix: StringQueryOperatorInput, buildTime: DateQueryOperatorInput): Site
   allSite(filter: SiteFilterInput, sort: SiteSortInput, skip: Int, limit: Int): SiteConnection!
   sitePlugin(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, resolve: StringQueryOperatorInput, name: StringQueryOperatorInput, version: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, nodeAPIs: StringQueryOperatorInput, browserAPIs: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, pluginFilepath: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput): SitePlugin
   allSitePlugin(filter: SitePluginFilterInput, sort: SitePluginSortInput, skip: Int, limit: Int): SitePluginConnection!
@@ -1869,6 +1869,8 @@ type Site implements Node {
   children: [Node!]!
   internal: Internal!
   siteMetadata: SiteSiteMetadata
+  port: Int
+  host: String
   polyfill: Boolean
   pathPrefix: String
   buildTime(
@@ -2000,6 +2002,8 @@ enum SiteFieldsEnum {
   siteMetadata___tagLine
   siteMetadata___description
   siteMetadata___author
+  port
+  host
   polyfill
   pathPrefix
   buildTime
@@ -2011,6 +2015,8 @@ input SiteFilterInput {
   children: NodeFilterListInput
   internal: InternalFilterInput
   siteMetadata: SiteSiteMetadataFilterInput
+  port: IntQueryOperatorInput
+  host: StringQueryOperatorInput
   polyfill: BooleanQueryOperatorInput
   pathPrefix: StringQueryOperatorInput
   buildTime: DateQueryOperatorInput
@@ -2197,9 +2203,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___theme_color
   pluginCreator___pluginOptions___display
   pluginCreator___pluginOptions___icon
-  pluginCreator___pluginOptions___stages
-  pluginCreator___pluginOptions___options___emitWarning
-  pluginCreator___pluginOptions___options___failOnError
   pluginCreator___pluginOptions___pathToConfigModule
   pluginCreator___pluginOptions___production
   pluginCreator___pluginOptions___disable
@@ -2389,9 +2392,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___theme_color
   pluginOptions___display
   pluginOptions___icon
-  pluginOptions___stages
-  pluginOptions___options___emitWarning
-  pluginOptions___options___failOnError
   pluginOptions___pathToConfigModule
   pluginOptions___production
   pluginOptions___disable
@@ -2523,8 +2523,6 @@ type SitePluginPluginOptions {
   theme_color: String
   display: String
   icon: String
-  stages: [String]
-  options: SitePluginPluginOptionsOptions
   pathToConfigModule: String
   production: Boolean
   disable: Boolean
@@ -2543,24 +2541,12 @@ input SitePluginPluginOptionsFilterInput {
   theme_color: StringQueryOperatorInput
   display: StringQueryOperatorInput
   icon: StringQueryOperatorInput
-  stages: StringQueryOperatorInput
-  options: SitePluginPluginOptionsOptionsFilterInput
   pathToConfigModule: StringQueryOperatorInput
   production: BooleanQueryOperatorInput
   disable: BooleanQueryOperatorInput
   generateStatFile: BooleanQueryOperatorInput
   analyzerMode: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
-}
-
-type SitePluginPluginOptionsOptions {
-  emitWarning: Boolean
-  failOnError: Boolean
-}
-
-input SitePluginPluginOptionsOptionsFilterInput {
-  emitWarning: BooleanQueryOperatorInput
-  failOnError: BooleanQueryOperatorInput
 }
 
 input SitePluginSortInput {
