@@ -19,14 +19,17 @@ const Indicator = styled.span`
   transition: 0.2s;
 
   &:before {
+    box-shadow: 0 0 4px 4px #FC5881;
+    width: 6px;
+    background: #f0f9e3;
+    transition: 0.1s;
+    //------
     position: absolute;
     top: calc(34%);
     content: "";
     display: inline-block;
-    width: 2px;
     height: 8px;
     border-radius: 10px;
-    transition: 0.5s;
   }
 `
 
@@ -34,23 +37,17 @@ const Indicator = styled.span`
  * The characters representing the on-off symbols
  */
 const Symbols = styled.div`
-background: -webkit-linear-gradient(
-    left,
-    #8fd9e4 0%,
-    #a0f2fe 53%,
-    #69dcf1 56%,
-    #33afce 99%,
-    #cef5ff 100%
-  );
+  transform-origin: 100% 0;
+  box-shadow: 2px 0 1px 0 #a6f2fe inset;
   background: linear-gradient(
     to right,
-    #8fd9e4 0%,
-    #a0f2fe 53%,
-    #69dcf1 56%,
-    #33afce 99%,
-    #cef5ff 100%
+    #cef5ff 0%,
+    #33afce 1%,
+    #69dcf1 47%,
+    #a0f2fe 50%,
+    #8fd9e4 100%
   );
-  box-shadow: -2px 0 1px 0 #a6f2fe inset;
+
   font-family: Poppins, sans-serif;
   border-radius: 3px;
   //line-height: 50px;
@@ -59,17 +56,14 @@ background: -webkit-linear-gradient(
   position: relative;
   z-index: 1;
   text-shadow: 0 1px rgba(255, 255, 255, 0.5);
-
-  transform-origin: 0 0;
   transform: scaleX(0.84);
   transition: 0.1s;
   padding: 0 4px;
-  
+
   &:first-letter {
-  letter-spacing: 40px;
+    letter-spacing: 40px;
   }
 `
-
 
 const CheckBox = styled.input`
   position: absolute;
@@ -77,31 +71,24 @@ const CheckBox = styled.input`
 
   // FIXME: This is targeting the Indicator
   &:checked ~ span:before {
-    box-shadow: 0 0 7px 5px #bafc58;
-    width: 6px;
-    background: #f0f9e3;
-    transition: 0.1s;
+    transition: 0.5s;
+    width: 2px;
+    background: transparent;
+    box-shadow: none;
   }
-  
+
+  // FIXME: this targets the Symbols
   &:checked ~ div {
-  transform-origin: 100% 0;
-  box-shadow: 2px 0 1px 0 #a6f2fe inset;
-  background: -webkit-linear-gradient(
-    left,
-    #cef5ff 0%,
-    #33afce 1%,
-    #69dcf1 47%,
-    #a0f2fe 50%,
-    #8fd9e4 100%
-  );
-  background: linear-gradient(
-    to right,
-    #cef5ff 0%,
-    #33afce 1%,
-    #69dcf1 47%,
-    #a0f2fe 50%,
-    #8fd9e4 100%
-  );
+    transform-origin: 0 0;
+    box-shadow: -2px 0 1px 0 #a6f2fe inset;
+    background: linear-gradient(
+      to right,
+      #8fd9e4 0%,
+      #a0f2fe 53%,
+      #69dcf1 56%,
+      #33afce 99%,
+      #cef5ff 100%
+    );
   }
 `
 const Label = styled.label`
@@ -124,7 +111,7 @@ const Label = styled.label`
   & > b {
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     width: 50%;
     height: 100%;
     border-radius: 8px;
@@ -135,8 +122,8 @@ const Label = styled.label`
 
   /* this creates the effect of the 'switch' toggling back & forth */
   & :checked ~ b {
-    right: auto;
-    left: 0;
+    left: auto;
+    right: 0;
     -webkit-transform: skewY(-5deg);
     transform: skewY(-5deg);
   }
@@ -144,7 +131,7 @@ const Label = styled.label`
 
 const ToggleColorMode = props => {
   const [colorMode, setColorMode] = useColorMode()
-  const handleToggle = ()  => {
+  const handleToggle = () => {
     setColorMode(colorMode === "default" ? "dark" : "default")
   }
   return (
