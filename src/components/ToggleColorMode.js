@@ -135,7 +135,11 @@ const ToggleColorMode = ({ className }) => {
   }
   return (
     <Label className={className}>
-      <CheckBox type="checkbox" onChange={handleToggle} />
+      <CheckBox
+        type="checkbox"
+        onChange={handleToggle}
+        checked={colorMode === "dark" || false}
+      />
       <Symbols>ΟI</Symbols>
       <b />
       <Indicator />
