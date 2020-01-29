@@ -31,11 +31,23 @@ const Header = ({ homePage }) => {
   return (
     <header>
       <Container
-        sx={{ display: "flex", py: 4, justifyContent: "space-between" }}
+        sx={{
+          display: "flex",
+          py: 3,
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
       >
         <Brand to="/">
           {/* FIXME: use the theme to set the font-size */}
-          <h1 sx={{ fontFamily: "body", color: "primary", fontSize: "1.5rem" }}>
+          <h1
+            sx={{
+              fontFamily: "body",
+              color: "primary",
+              fontSize: "1.5rem",
+              margin: 0,
+            }}
+          >
             {title}
           </h1>
         </Brand>

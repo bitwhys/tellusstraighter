@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Tell Us Straighter",
+    tagLine: "Providing colored commentary, in black & white",
     description:
       "Providing colored commentary, in black & white. One man's journey of becoming a full stack engineer.",
     author: "@bitwhys",
@@ -12,7 +13,20 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "images",
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/content/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "blog",
+        path: `${__dirname}/content/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx", ".md", ".markdown"],
       },
     },
     `gatsby-transformer-sharp`,
