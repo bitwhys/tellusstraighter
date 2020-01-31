@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import GalleryItem from "@components/GalleryItem"
 
-const FlexBox = styled.div`
+const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 16px;
@@ -28,7 +28,7 @@ const Gallery = () => {
   `)
 
   return (
-    <FlexBox>
+    <GridContainer>
       {images.map(image => (
         <GalleryItem
           key={image.name}
@@ -36,7 +36,7 @@ const Gallery = () => {
           topic={image.name.split("-")[0]}
         />
       ))}
-    </FlexBox>
+    </GridContainer>
   )
 }
 

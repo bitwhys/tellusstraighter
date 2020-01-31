@@ -24,7 +24,7 @@ const Indicator = styled.span`
     top: calc(34%);
     height: 7px;
     width: 5px;
-    background: #faf0f4;
+    background: #fbeef3;
     box-shadow: 0 0 9px 3px #fc5881;
     border-radius: 10px;
     transition: 0.1s;
