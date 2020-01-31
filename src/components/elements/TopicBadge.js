@@ -16,10 +16,12 @@ const Base = styled(Link)`
   text-transform: capitalize;
   text-decoration: none;
   display: inline-block;
+  text-align: center;
   user-select: none;
   box-shadow: 0 0 0 1px ${p => p.theme.colors.muted};
   border-radius: 3px;
   transition: all 300ms linear;
+  min-width: 50px;
 
   &:hover {
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.35);

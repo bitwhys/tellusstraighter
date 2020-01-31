@@ -4,6 +4,8 @@ const colors = {
   primary: "#ff0844",
   secondary: "#1a1e1d",
   muted: "#EDF2F7",
+  card: "#FCFCFC",
+  subdued: "#808080",
   topics: {
     react: "#0B0760",
     javascript: "#EED7E6",
@@ -15,9 +17,11 @@ const colors = {
   modes: {
     dark: {
       text: "#fff",
-      background: "#1a1e1d",
+      background: "#0f111f",
       primary: "#ff0844",
       muted: "#33374D",
+      card: "#0c0c18",
+      subdued: "#40414f",
     },
   },
 }

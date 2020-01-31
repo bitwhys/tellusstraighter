@@ -30,6 +30,41 @@ const IndexPage = () => (
         topic={topic}
         keywords={keywords}
       />
+      <SinglePostFeedItem
+        date={date}
+        excerpts={excerpts}
+        title={title}
+        topic="javascript"
+        keywords={keywords}
+      />
+      <SinglePostFeedItem
+        date={date}
+        excerpts={excerpts}
+        title={title}
+        topic="ml"
+        keywords={keywords}
+      />
+      <SinglePostFeedItem
+        date={date}
+        excerpts={excerpts}
+        title={title}
+        topic="javascript"
+        keywords={keywords}
+      />
+      <SinglePostFeedItem
+        date={date}
+        excerpts={excerpts}
+        title={title}
+        topic="comp-sci"
+        keywords={keywords}
+      />
+      <SinglePostFeedItem
+        date={date}
+        excerpts={excerpts}
+        title={title}
+        topic="react"
+        keywords={keywords}
+      />
     </Section>
   </Layout>
 )
